@@ -28,11 +28,11 @@ express_app.get("/user" , (req , res) => {
 })
 
 //Post
-//Querystring
-//http://localhost:8088/user?firstname=Sanjay&lastname=Kannan
-express_app.post("/user" , (req , res) => {
-    let firstname = req.query.firstname;
-    let lastname = req.query.lastname;
+//Path parameter
+//http://localhost:8088/user/Sanjay/Kannan
+express_app.post("/user/:firstname/:lastname" , (req , res) => {
+    let firstname = req.params.firstname;
+    let lastname = req.params["lastname"];
 
     output = {
         status: "Success",
